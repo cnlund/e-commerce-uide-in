@@ -25,4 +25,4 @@ jobs:
       run: go build -v ./...
 
     - name: Run
-      run: go run ".github\workflows\index.go"
+      run: go run index.go
