@@ -22,7 +22,7 @@ jobs:
         go-version: '1.21.4'
 
     - name: Build
-      run: go build ".github\workflows\index.go"
+      run: go build ".githubworkflowsindex.go"
 
     - name: Run
-      run: go run ".github\workflows\index.go"
+      run: go run ".githubworkflowsindex.go"
