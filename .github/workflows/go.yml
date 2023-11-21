@@ -22,7 +22,7 @@ jobs:
         go-version: '1.21.4'
 
     - name: Build
-      run: go build "/home/runner/go/pkg"
+      run: go build -v ./...
 
     - name: Run
-      run: go run "github/workflows/index.go"
+      run: go run -v ./...
