@@ -25,8 +25,12 @@ func main() {
 	//Zona de HTML
 	//Este es el handler con el que se ejecuta el HTML
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		template, _ := template.ParseFiles("templates/index.html")
-		template.Execute(rw, nil)
+		template, err := template.ParseFiles("templates/index.html")
+		if err != nil {
+			panic(err)
+		} else {
+			template.Execute(rw, nil)
+		}
 	})
 	//Aqui mandamos nuestra pagina web al puerto local 3000
 	http.ListenAndServe(":3000", nil)
