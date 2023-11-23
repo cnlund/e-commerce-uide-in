@@ -2,7 +2,7 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 
@@ -21,16 +21,13 @@ func main() {
 	}
 	log.Printf("Se conecto!!!")
 	defer db.Close()
-	rows, err := db.Query("INSERT INTO Tabla_prueba (id, dato_prueba) VALUES (4, 'isra');")
-	if err != nil {
-		log.Fatal("Error al insertar: " + err.Error())
-	}
-	defer rows.Close()
 
 	//Zona de HTML
+	//Este es el handler con el que se ejecuta el HTML
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(rw, "Hola Mundo")
+		template, _ := template.ParseFiles("templates/index.html")
+		template.Execute(rw, nil)
 	})
 	//Aqui mandamos nuestra pagina web al puerto local 3000
-	//http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", nil)
 }
