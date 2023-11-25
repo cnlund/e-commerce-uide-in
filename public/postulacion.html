@@ -56,25 +56,22 @@
             <h1 class="titulo">Postulantes</h1>
         </div>
         <div class="Datos">
+           <form>
             <div class="Nombre">
                 <h1>Nombre</h1>
-                
                 <div class="inputNombre">
                     <input type="text" id="name" name="name">
-                    <input type="submit" value="Enviar">
                 </div>    
-                
             </div>
             <div class="Ciudad">
                 <h1>Ciudad</h1>
                     <select id="ciudades">
-                        <option>Escoge tu ciudad</option>
+                        <option disabled="true">Escoge tu ciudad</option>
                     </select>
             </div>
             <div class="Correo">
                 <h1>Correo</h1>
                 <input type="text" id="Mail" name="Mail">
-                <input type="submit" value="Enviar">
             </div>
             <div class="Edad">
                 <h1>Fecha de nacimiento</h1>
@@ -84,10 +81,13 @@
             <div class="Carrera">
                 <h1>Carrera</h1>
                 <div>
-                    <span>Carrera</span>
-                    
+                    <select id="carreras">
+                        <option required="true">Escoge tu carrera</option>
+                    </select>
                 </div>
             </div>
+            <input type="submit" value="Postularse">
+           </form>
         </div> 
         <div> 
             <form action="/index" method="get">
@@ -96,13 +96,24 @@
         </div>
         <script>
             var sciudades = document.getElementById("ciudades")
+            var scarreras = document.getElementById("carreras")
             fetch("/postular/lciudades")
                 .then(response => response.text())
                 .then(data => {
-                    var lineas = data.split('\n');
-                    for(var i = 0; i < lineas.length-1; i++){
-                        var noption = "<option>" + lineas[i] + "</option>"
+                    var ciudades = data.split('\n');
+                    for(var i = 0; i < ciudades.length-1; i++){
+                        var noption = "<optionvalue="+i+">" + ciudades[i] + "</option>"
                         sciudades.innerHTML += noption
+                    }
+                })
+                .catch(error => console.error('Error al leer el archivo:', error));
+            fetch("/postular/lcarreras")
+                .then(response => response.text())
+                .then(data => {
+                    var carreras = data.split('\n');
+                    for(var i = 0; i < carreras.length-1; i++){
+                        var noption = "<option value="+i+">" + carreras[i] + "</option>"
+                        scarreras.innerHTML += noption
                     }
                 })
                 .catch(error => console.error('Error al leer el archivo:', error));

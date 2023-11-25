@@ -14,18 +14,14 @@ import (
 var db *sql.DB
 
 // Zona de los Structs-------------------------------------------------------------------
-// Struct para el buscador
-type Ciudad struct {
-	Nombre string
-}
 
 // Struct del formato de formulario de informacion sobre los postulantes
 type Format_Post struct {
-	Nombre   string
-	Edad     int
-	Ciudad   string
-	Correo   string
-	Egresado Carrera
+	Nombre  string
+	Edad    int
+	Ciudad  int
+	Correo  string
+	Carrera int
 }
 
 // Struct de las diversas habilidades que pueden haber en cada carrera
@@ -33,12 +29,7 @@ type Skills struct {
 	Habilidad    string
 	Conoce       bool
 	Nivel_con    int
-	Carrera_pert Carrera
-}
-
-// Struct de las carreras con sus datos relevantes
-type Carrera struct {
-	Nombrec string
+	Carrera_pert int
 }
 
 // Zona de los Handlers------------------------------------------------------------------
@@ -60,17 +51,21 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 
 // Handler de almacenamiento de ciudades
 func ciudadesHandler(rw http.ResponseWriter, r *http.Request) {
-	var cid int
-	rows2, _ := db.Query("SELECT Ciudad_id FROM Ciudades")
-	for rows2.Next() {
-		rows2.Scan(&cid)
-	}
 	var cnombre string
 	rows, _ := db.Query("SELECT Ciudad_nombre FROM Ciudades")
 	for rows.Next() {
 		rows.Scan(&cnombre)
-		cid := Ciudad{cnombre}
-		fmt.Fprintln(rw, cid.Nombre)
+		fmt.Fprintln(rw, cnombre)
+	}
+}
+
+// Handler de almacenamiento de carreras
+func carrerasHandler(rw http.ResponseWriter, r *http.Request) {
+	var cnombre string
+	rows, _ := db.Query("SELECT Carrera_nombre FROM Carreras")
+	for rows.Next() {
+		rows.Scan(&cnombre)
+		fmt.Fprintln(rw, cnombre)
 	}
 }
 
@@ -98,6 +93,7 @@ func main() {
 	mux.HandleFunc("/", indexHandler)
 	mux.HandleFunc("/postular", postulanteHandler)
 	mux.HandleFunc("/postular/lciudades", ciudadesHandler)
+	mux.HandleFunc("/postular/lcarreras", carrerasHandler)
 	mux.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
 	http.ListenAndServe(":443", mux)
