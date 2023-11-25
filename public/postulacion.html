@@ -1,18 +1,111 @@
 <html lang="es">
     <head>
-        <title>
-            Ochurus Postulantes
-        </title>
+        <title>Ochurus Postulantes</title>
+        <style>
+            @font-face {
+            font-family: 'Monday Rain';
+            src: url('Monday_Rain/Monday-Rain.eot');
+            src: url('Monday_Rain/Monday-Rain.eot?#iefix') format('embedded-opentype'),
+            url('Monday_Rain/Monday-Rain.woff2') format('woff2'),
+            url('Monday_Rain/Monday-Rain.woff') format('woff'),
+            url('Monday_Rain/Monday-Rain.ttf')  format('truetype'),
+            url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
+            }
+            .franja_superior{
+               
+                background: rgb(66,58,180);
+                background: linear-gradient(90deg, rgba(66,58,180,1) 37%, rgba(81,9,215,1) 55%, rgba(207,69,252,1) 87%);
+                margin-top: -0.77vh;
+                margin-left: -0.37vw;
+                margin-right: -0.37vw;
+                size: 50vh;    
+            }
+            .titulo{
+                font-size: 10vh;
+            }
+           
+            .Nombre{
+                margin-top: -5vh;
+            }
+            .name{
+                padding: 10px;
+            }
+            .Ciudad{
+                margin-top: -2vh;
+            }
+            .Correo{
+                margin-top: -vh;
+            }
+            .Edad{
+                margin-top: -3vh;
+            }
+            .Carrera{
+                margin-top: -3vh;
+            }
+            
+        </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
     </head>       
     <body>
         <!-- Crearemo la franja superior donde se leera Postulantes -->
         <div class="franja_superior">  
-            <h1>Postulantes</h1>
+            <h1 class="titulo">Postulantes</h1>
+        </div>
+        <div class="Datos">
+            <div class="Nombre">
+                <h1>Nombre</h1>
+                
+                <div class="inputNombre">
+                    <input type="text" id="name" name="name">
+                    <input type="submit" value="Enviar">
+                </div>    
+                
+            </div>
+            <div class="Ciudad">
+                <h1>Ciudad</h1>
+                    <select id="ciudades">
+                        <option>Escoge tu ciudad</option>
+                    </select>
+            </div>
+            <div class="Correo">
+                <h1>Correo</h1>
+                <input type="text" id="Mail" name="Mail">
+                <input type="submit" value="Enviar">
+            </div>
+            <div class="Edad">
+                <h1>Fecha de nacimiento</h1>
+                <input type="text" id="Fecha" name="Fecha">
+                
+            </div>
+            <div class="Carrera">
+                <h1>Carrera</h1>
+                <div>
+                    <span>Carrera</span>
+                    
+                </div>
+            </div>
         </div> 
         <div> 
             <form action="/index" method="get">
                 <button type="submit">Atras</button>
             </form>
         </div>
+        <script>
+            var sciudades = document.getElementById("ciudades")
+            fetch("/postular/lciudades")
+                .then(response => response.text())
+                .then(data => {
+                    var lineas = data.split('\n');
+                    for(var i = 0; i < lineas.length-1; i++){
+                        var noption = "<option>" + lineas[i] + "</option>"
+                        sciudades.innerHTML += noption
+                    }
+                })
+                .catch(error => console.error('Error al leer el archivo:', error));
+        </script>
     </body>
 </html>
