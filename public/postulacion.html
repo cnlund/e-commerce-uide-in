@@ -11,21 +11,30 @@
             url('Monday_Rain/Monday-Rain.ttf')  format('truetype'),
             url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
             }
-            .franja_superior{
-               
-                background: rgb(66,58,180);
+            .franja_superior{         
                 background: linear-gradient(90deg, rgba(66,58,180,1) 37%, rgba(81,9,215,1) 55%, rgba(207,69,252,1) 87%);
                 margin-top: -0.77vh;
                 margin-left: -0.37vw;
-                margin-right: -0.37vw;
-                size: 50vh;    
+                margin-right: -0.37vw;    
             }
+            li{
+                display: inline-block;
+                margin-top: -7vh;
+                margin-bottom: -7vh;
+            }
+            .li1{
+                padding-left: 1vw;
+            }           
             .titulo{
                 font-size: 10vh;
             }
-           
+            .regresar{
+                font-size: 8vh;
+                background: none;
+                border: none;
+            }
             .Nombre{
-                margin-top: -5vh;
+                margin-top: -3vh;
             }
             .name{
                 padding: 10px;
@@ -52,8 +61,11 @@
     </head>       
     <body>
         <!-- Crearemo la franja superior donde se leera Postulantes -->
-        <div class="franja_superior">  
-            <h1 class="titulo">Postulantes</h1>
+        <div class="franja_superior">
+            <ul>
+                <li class="li2"><form action="/index" method="get"><button class="regresar" type="submit"><img src="/postular/imgflecha" height="64" width="64"></button></form></li>
+                <li class="li1"><h1 class="titulo">Postulantes</h1></li>
+            </ul>
         </div>
         <div class="Datos">
            <form>
@@ -89,11 +101,6 @@
             <input type="submit" value="Postularse">
            </form>
         </div> 
-        <div> 
-            <form action="/index" method="get">
-                <button type="submit">Atras</button>
-            </form>
-        </div>
         <script>
             var sciudades = document.getElementById("ciudades")
             var scarreras = document.getElementById("carreras")
@@ -102,7 +109,7 @@
                 .then(data => {
                     var ciudades = data.split('\n');
                     for(var i = 0; i < ciudades.length-1; i++){
-                        var noption = "<optionvalue="+i+">" + ciudades[i] + "</option>"
+                        var noption = "<option value="+i+">" + ciudades[i] + "</option>"
                         sciudades.innerHTML += noption
                     }
                 })

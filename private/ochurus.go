@@ -49,6 +49,12 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 	template.Execute(rw, nil)
 }
 
+// handler de imagen prueba
+func flechaHandler(rw http.ResponseWriter, r *http.Request) {
+	template, _ := template.ParseFiles("./public/Imagenes/prueba.jpg")
+	template.Execute(rw, nil)
+}
+
 // Handler de almacenamiento de ciudades
 func ciudadesHandler(rw http.ResponseWriter, r *http.Request) {
 	var cnombre string
@@ -94,6 +100,7 @@ func main() {
 	mux.HandleFunc("/postular", postulanteHandler)
 	mux.HandleFunc("/postular/lciudades", ciudadesHandler)
 	mux.HandleFunc("/postular/lcarreras", carrerasHandler)
+	mux.HandleFunc("/postular/imgflecha", flechaHandler)
 	mux.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
 	http.ListenAndServe(":443", mux)
