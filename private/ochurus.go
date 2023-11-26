@@ -51,7 +51,7 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 
 // handler de imagen prueba
 func flechaHandler(rw http.ResponseWriter, r *http.Request) {
-	template, _ := template.ParseFiles("./public/Imagenes/prueba.jpg")
+	template, _ := template.ParseFiles("./public/Imagenes/flecha.png")
 	template.Execute(rw, nil)
 }
 
