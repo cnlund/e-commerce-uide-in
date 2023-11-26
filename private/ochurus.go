@@ -51,17 +51,20 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 
 // handler de imagen prueba
 func flechaHandler(rw http.ResponseWriter, r *http.Request) {
-	template, _ := template.ParseFiles("./public/Imagenes/flecha.png")
-	template.Execute(rw, nil)
+	fimg, error := template.ParseFiles("./public/Imagenes/Flecha.jpg")
+	if error != nil {
+		log.Fatal("Fallo la funcion de FLECHA ", error)
+	}
+	fimg.Execute(rw, nil)
 }
 
 // Handler de almacenamiento de ciudades
-func ciudadesHandler(rw http.ResponseWriter, r *http.Request) {
+func ciudadesHandler(w http.ResponseWriter, r *http.Request) {
 	var cnombre string
 	rows, _ := db.Query("SELECT Ciudad_nombre FROM Ciudades")
 	for rows.Next() {
 		rows.Scan(&cnombre)
-		fmt.Fprintln(rw, cnombre)
+		fmt.Fprintln(w, cnombre)
 	}
 }
 
