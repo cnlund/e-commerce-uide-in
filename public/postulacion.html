@@ -1,218 +1,208 @@
 <html lang="es">
-    <head>
-        <title>Ochurus Postulantes</title>
-        <style>
-            @font-face {
+
+<head>
+    <title>Ochurus Postulantes</title>
+    <style>
+        @font-face {
             font-family: 'Monday Rain';
             src: url('Monday_Rain/Monday-Rain.eot');
             src: url('Monday_Rain/Monday-Rain.eot?#iefix') format('embedded-opentype'),
-            url('Monday_Rain/Monday-Rain.woff2') format('woff2'),
-            url('Monday_Rain/Monday-Rain.woff') format('woff'),
-            url('Monday_Rain/Monday-Rain.ttf')  format('truetype'),
-            url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
-            }
-            .contenedor{
-                display: block;
-            }
-            .franja_superior{ 
-                display: grid;        
-                background: linear-gradient(90deg, rgba(66,58,180,1) 37%, rgba(81,9,215,1) 55%, rgba(207,69,252,1) 87%);
-                margin-top: -0.77vh;
-                margin-left: -0.37vw;
-                margin-right: -0.37vw;    
-            }
-            .FranjaInferior{
-                align-items: center;
-            }
-            li{
-                display: inline-block;
-                margin-top: -7vh;
-                margin-bottom: -7vh;
-            }
-            .li1{
-                padding-left: 1vw;
-            }           
-            .titulo{
-                font-size: 10vh;
-            }
-            .regresar{
-                display: grid;
-                font-size: 8vh;
-                background: none;
-                border: none;
-            }
-            .Datos{
-                border: 0.7vh ridge black;
-                word-wrap: break-word;
-                border-radius: 8px;
-                margin-top: 5vh;
-                margin-left: 30vw;
-                margin-right: 30vw;
-                background-color: white;
-            }
-            .Nombre{
-                margin-left: 5vw;
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-            }
-            .Ciudad{
-                margin-left: 5vw;
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-            }
-            .Correo{
-                margin-left: 5vw;
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-            }
-            .Edad{
-                margin-left: 5vw;
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-            }
-            .Carrera{
-                margin-left: 5vw;
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-            }
-            .i{
-                max-width: 100%;
-                min-height: 1%;
-                min-width: 1%;
-                overflow:hidden;
-            }
-            .acuerdo{
-                margin-top: 2vh;
-                margin-left: 2vw;
-            }
-            .BotonPostularse{
-                margin-left: 2vw;
-            }
-        </style>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+                url('Monday_Rain/Monday-Rain.woff2') format('woff2'),
+                url('Monday_Rain/Monday-Rain.woff') format('woff'),
+                url('Monday_Rain/Monday-Rain.ttf') format('truetype'),
+                url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
+        }
 
-        
-    </head>       
-    <body>
-        <div class="contenedor">
-            <!-- Crearemos la franja superior donde se leera Postulantes -->
-            <div class="franja_superior">
-                <ul>
-                    <li class="li2"><form action="/index" method="get"><button class="regresar" type="submit"></button></form></li>
-                    <li class="li1"><h1 class="titulo">Postulantes</h1></li>
-                </ul>
-            </div>
-            <div class="FranjaInferior">
-                <!--Esta es la parte donde se mostrara en pantalla las entradas de datos
+        .contenedor {
+            display: block;
+        }
+
+        .franja_superior {
+            display: flex;
+            background: linear-gradient(90deg, rgba(66, 58, 180, 1) 37%, rgba(81, 9, 215, 1) 55%, rgba(207, 69, 252, 1) 87%);
+            margin-top: -0.77vh;
+            margin-left: -0.37vw;
+            margin-right: -0.37vw;
+        }
+
+        .FranjaInferior {
+            align-items: center;
+        }
+
+
+        li {
+            display: inline-block;
+            margin-top: -7vh;
+            margin-bottom: -7vh;
+        }
+
+        .li1 {
+            padding-top: -10vh;
+        }
+
+        .titulo {
+            font-size: 10vh;
+        }
+
+        .regresar {
+            display: grid;
+            font-size: 8vh;
+            background: none;
+            border: none;
+        }
+
+        .Datos {
+            border: 0.7vh ridge black;
+            word-wrap: break-word;
+            border-radius: 8px;
+            margin-top: 5vh;
+            margin-left: 30vw;
+            margin-right: 30vw;
+            background-color: white;
+        }
+
+        .Nombre {
+            margin-left: 5vw;
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+        }
+
+        .Ciudad {
+            margin-left: 5vw;
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+        }
+
+        .Correo {
+            margin-left: 5vw;
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+        }
+
+        .Edad {
+            margin-left: 5vw;
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+        }
+
+        .Carrera {
+            margin-left: 5vw;
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+        }
+
+        .i {
+            max-width: 100%;
+            min-height: 1%;
+            min-width: 1%;
+            overflow: hidden;
+        }
+
+        .acuerdo {
+            margin-top: 2vh;
+            margin-left: 2vw;
+        }
+
+        .BotonPostularse {
+            margin-left: 2vw;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+
+
+</head>
+
+<body>
+    <div class="contenedor">
+        <!-- Crearemos la franja superior donde se leera Postulantes -->
+        <div class="franja_superior">
+            <ul>
+                <li class="li2">
+                    <form action="/" method="get"><button class="regresar" type="submit"><img class="flechita"
+                                src="/postular/imgflecha"></button></form>
+                </li>
+                <li class="li1">
+                    <h1 class="titulo">Postulantes</h1>
+                </li>
+            </ul>
+        </div>
+        <div class="FranjaInferior">
+            <!--Esta es la parte donde se mostrara en pantalla las entradas de datos
                     necesarias para la postulacion en el sitio web-->
-                <div class="Datos">
-                    <form>
-                        <div class="Nombre">
-                            <h1>Nombres</h1>
-                                <input type="text" class="i" id="name" name="name">    
+            <div class="Datos">
+                <form>
+                    <div class="Nombre">
+                        <h1>Nombres</h1>
+                        <input type="text" class="i" id="name" name="name">
+                    </div>
+                    <div class="Ciudad">
+                        <h1>Ciudad</h1>
+                        <select class="i" id="ciudades">
+                            <option disabled selected>Escoge tu ciudad</option>
+                        </select>
+                    </div>
+                    <div class="Correo">
+                        <h1>Correo</h1>
+                        <input type="text" class="i" id="Mail" name="Mail">
+                    </div>
+                    <div class="Edad">
+                        <h1>Fecha de nacimiento</h1>
+                        <input type="text" class="i" id="Fecha" name="Fecha">
+
+                    </div>
+                    <div class="Carrera">
+                        <h1>Carrera</h1>
+                        <div>
+                            <select class="i" id="carreras">
+                                <option disabled selected>Escoge tu carrera</option>
+                            </select>
                         </div>
-                        <div class="Ciudad">
-                            <h1>Ciudad</h1>
-                                <select class="i" id="ciudades">
-                                    <option disabled selected>Escoge tu ciudad</option>
-                                </select>
-                        </div>
-                        <div class="Correo">
-                            <h1>Correo</h1>
-                                <input type="text" class="i" id="Mail" name="Mail">
-                        </div>
-                        <div class="Edad">
-                            <h1>Fecha de nacimiento</h1>
-                            <input type="text" class="i" id="Fecha" name="Fecha">
-                            
-                        </div>
-                        <div class="Carrera">
-                            <h1>Carrera</h1>
-                            <div>
-                                <select class="i" id="carreras">
-                                    <option disabled selected>Escoge tu carrera</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="acuerdo">
-                            <input type="checkbox" class="i" id="acuerdo" name="acuerdo">
-                            <label for="acuerdo">Estoy de acuerdo con que compartan mis datos y me envien correos</label>
-                        </div>
-                        <div class="BotonPostularse">
-                            <input class="i" type="submit" value="Postularse">
-                        </div>
-                    </form>
-                </div> 
+                    </div>
+                    <div class="acuerdo">
+                        <input type="checkbox" class="i" id="acuerdo" name="acuerdo">
+                        <label for="acuerdo">Estoy de acuerdo con que compartan mis datos y me envien correos</label>
+                    </div>
+                    <div class="BotonPostularse">
+                        <input class="i" type="submit" value="Postularse">
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="Datos">
-           <form>
-            <div class="Nombre">
-                <h1>Nombre</h1>
-                <div class="inputNombre">
-                    <input type="text" id="name" name="name" value="Nombre"> == $0
-                </div>    
-            </div>
-            <div class="Ciudad">
-                <h1>Ciudad</h1>
-                    <select id="ciudades">
-                        <option disabled="true">Escoge tu ciudad</option>
-                    </select>
-            </div>
-            <div class="Correo">
-                <h1>Correo</h1>
-                <input type="text" id="Mail" name="Mail">
-            </div>
-            <div class="Edad">
-                <h1>Fecha de nacimiento</h1>
-                <input type="text" id="Fecha" name="Fecha">
-                
-            </div>
-            <div class="Carrera">
-                <h1>Carrera</h1>
-                <div>
-                    <select id="carreras">
-                        <option required="true">Escoge tu carrera</option>
-                    </select>
-                </div>
-            </div>
-            <input type="submit" value="Postularse">
-           </form>
-        </div> 
-            <!--Aqui empieza el script que une la BDD con el HTML para que asi 
+    </div>
+    <!--Aqui empieza el script que une la BDD con el HTML para que asi 
                 se pueda recibir la informacion-->
-        <script>
-            var sciudades = document.getElementById("ciudades")
-            var scarreras = document.getElementById("carreras")
-            fetch("/postular/lciudades")
-                .then(response => response.text())
-                .then(data => {
-                    var ciudades = data.split('\n');
-                    for(var i = 0; i < ciudades.length-1; i++){
-                        var noption = "<option value="+i+">" + ciudades[i] + "</option>"
-                        sciudades.innerHTML += noption
-                    }
-                })
-                .catch(error => console.error('Error al leer el archivo:', error));
-            fetch("/postular/lcarreras")
-                .then(response => response.text())
-                .then(data => {
-                    var carreras = data.split('\n');
-                    for(var i = 0; i < carreras.length-1; i++){
-                        var noption = "<option value="+i+">" + carreras[i] + "</option>"
-                        scarreras.innerHTML += noption
-                    }
-                })
-                .catch(error => console.error('Error al leer el archivo:', error));
-            
-                
-        </script>
-    </body>
+    <script>
+        var sciudades = document.getElementById("ciudades")
+        var scarreras = document.getElementById("carreras")
+        fetch("/postular/lciudades")
+            .then(response => response.text())
+            .then(data => {
+                var ciudades = data.split('\n');
+                for (var i = 0; i < ciudades.length - 1; i++) {
+                    var noption = "<option value=" + i + ">" + ciudades[i] + "</option>"
+                    sciudades.innerHTML += noption
+                }
+            })
+            .catch(error => console.error('Error al leer el archivo:', error));
+        fetch("/postular/lcarreras")
+            .then(response => response.text())
+            .then(data => {
+                var carreras = data.split('\n');
+                for (var i = 0; i < carreras.length - 1; i++) {
+                    var noption = "<option value=" + i + ">" + carreras[i] + "</option>"
+                    scarreras.innerHTML += noption
+                }
+            })
+            .catch(error => console.error('Error al leer el archivo:', error));
+    </script>
+</body>
+
 </html>

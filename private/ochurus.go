@@ -51,7 +51,7 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 
 // handler de imagen prueba
 func flechaHandler(rw http.ResponseWriter, r *http.Request) {
-	fimg, error := template.ParseFiles("./public/Imagenes/Flecha.jpg")
+	fimg, error := template.ParseFiles("./public/Imagenes/flechita.webp")
 	if error != nil {
 		log.Fatal("Fallo la funcion de FLECHA ", error)
 	}
