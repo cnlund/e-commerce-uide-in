@@ -45,7 +45,10 @@ func indexHandler(rw http.ResponseWriter, r *http.Request) {
 
 // Handler de la pagina de POSTULANTES
 func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
-	template, _ := template.ParseFiles("./public/postulacion.html")
+	template, err := template.ParseFiles("./public/postulacion.html")
+	if err != nil {
+		log.Fatal(err)
+	}
 	template.Execute(rw, nil)
 }
 
