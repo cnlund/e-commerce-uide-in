@@ -122,15 +122,30 @@
                 url('Monday_Rain/Monday-Rain.ttf') format('truetype'),
                 url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
         }
+        .contenedor{
+            display: block;
+        }
            .franja_superior{
             margin: auto;
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 73%, rgba(188,0,255,1) 100%);
+            background: linear-gradient(90deg, rgba(10,0,180,1) 0%, rgba(16,9,121,1) 66%, rgba(188,0,255,1) 100%);
             display: flex;
             flex-wrap: wrap;
             min-width: fit-content;
+            align-content: center;
         } 
+        li {
+            display: inline-block;
+            margin-top: 3vh;
+            margin-bottom: -7vh;
+        }
         .FranjaInferior{
             align-items: center;
+        }
+        .i {
+           border: none;
+           outline: none;
+           border-bottom: 1px solid gray;
+           padding: 2vh 1vh ;
         }
         
         }
@@ -164,7 +179,7 @@
                 <form>
                     <div class="Nombre">
                         <h1>Nombres</h1>
-                        <input type="text" class="i" id="name" name="name">
+                        <input type="text" class="i name" id="name" name="name">
                     </div>
                     <div class="Ciudad">
                         <h1>Ciudad</h1>
@@ -174,7 +189,7 @@
                     </div>
                     <div class="Correo">
                         <h1>Correo</h1>
-                        <input type="text" class="i" id="Mail" name="Mail">
+                        <input type="text" class="i mail" id="Mail" name="Mail">
                     </div>
                     <div class="Edad">
                         <h1>Fecha de nacimiento</h1>

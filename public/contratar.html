@@ -3,13 +3,89 @@
         <title>
             Ochurus Contratantes
         </title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                text-transform: capitalize;
+                text-decoration: none;     
+            }
+            body{
+                min-height: 100vh;
+            }
+            header{
+                position: fixed;
+                top: 0; left: 0; right: 0;
+                background: #790909;
+                box-shadow: 0 5px 10px rgba(0,0,0,.3);
+                padding: 0px 7%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo{
+                font-weight: bolder;
+                font-size: 5vh;
+                color: #fff;
+            }
+            .navciudad ul{
+                list-style: none;
+            }
+            .navciudad ul li{
+                position: relative;
+                float: left;
+            }
+            .navciudad ul li a{
+                font-size: 2vh;
+                padding: 20px;
+                color: #fff;
+                display: block;
+            }
+            .navciudad ul li a:hover{
+                background: #fff;
+                color: #333;
+            }
+            .navciudad ul li ul{
+                position: absolute;
+                left: 0;
+                width: 200px;
+                background-color: #790909;
+                display: none;
+            }
+            .navciudad ul li ul li{
+                width: 100%;
+                border-top: 1px solid rgba(0,0,0,.1);
+            } 
+            .navciudad ul li ul li ul{
+                left: -200px;
+                top: 0;
+            }
+            .navciudad ul li:focus-within > ul,.navciudad ul li:hover > ul{
+                display: initial;
+            }
+
+        </style>
     </head>       
     <body>
-        <h1>Aqui ira un buscador</h1>
-        <p>cambio hecho por los huevos del ISRA</p>
-        <h2>recibido, cambio</h2>
-        <form action="/index" method="get">
-            <button type="submit">Atras</button>
-        </form>
+        <header>
+           <h1 class="logo">CONTRATAR</h1>
+            
+           <nav class="navciudad">
+                <ul>
+                    <li><a href="#">ciudades</a>
+                        <ul>
+                            <li>
+                                <!--Insertado de ciudades para poder navegar en la base de datos-->
+                                <a href="#">Cuenca+</a>
+                                <a href="#">Quito+</a>
+                                <a href="#">Guayaquil+</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+           </nav>
+        </header>
     </body>
 </html>
