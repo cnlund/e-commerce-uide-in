@@ -106,5 +106,5 @@ func main() {
 	mux.HandleFunc("/postular/imgflecha", flechaHandler)
 	mux.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
-	http.ListenAndServe(":443", mux)
+	//http.ListenAndServe(":443", mux)
 }
