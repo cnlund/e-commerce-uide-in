@@ -86,8 +86,6 @@ func contratantesHandler(rw http.ResponseWriter, r *http.Request) {
 
 // -----------------------------------------------------------------------------------------
 func main() {
-	//Creamos el server mux
-	mux := http.NewServeMux()
 	//Zona de BDD---------------------------------------------------------------------------
 	var err error
 	//Hacemos la conexion
@@ -99,12 +97,12 @@ func main() {
 	defer db.Close()
 	// Zona HTML----------------------------------------------------------------------------
 	//Creamos los handlerfuncs
-	mux.HandleFunc("/", indexHandler)
-	mux.HandleFunc("/postular", postulanteHandler)
-	mux.HandleFunc("/postular/lciudades", ciudadesHandler)
-	mux.HandleFunc("/postular/lcarreras", carrerasHandler)
-	mux.HandleFunc("/postular/imgflecha", flechaHandler)
-	mux.HandleFunc("/contratar", contratantesHandler)
+	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/postular", postulanteHandler)
+	http.HandleFunc("/postular/lciudades", ciudadesHandler)
+	http.HandleFunc("/postular/lcarreras", carrerasHandler)
+	http.HandleFunc("/postular/imgflecha", flechaHandler)
+	http.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
-	http.ListenAndServe(":443", mux)
+	http.ListenAndServe(":443", nil)
 }
