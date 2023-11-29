@@ -101,7 +101,7 @@ func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	//Creamos los handlerfuncs
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/postular", postulanteHandler)
+	http.HandleFunc("/postular?", postulanteHandler)
 	http.HandleFunc("/postular/lciudades", ciudadesHandler)
 	http.HandleFunc("/postular/lcarreras", carrerasHandler)
 	http.HandleFunc("/postular/imgflecha", flechaHandler)
