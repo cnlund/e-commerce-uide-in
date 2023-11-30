@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Instalar dependencias
-        uses: go get "ochurus.store"
+        run: go get -v ./...
       
       - name: Ejecutar ochurus
-        uses: go run "/private/ochurus.go"
+        run:  go run -v ./...
       
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
