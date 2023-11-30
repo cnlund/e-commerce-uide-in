@@ -12,10 +12,7 @@ jobs:
       
     - name: Configure GitHub Pages
       uses: actions/configure-pages@v3
-
-    - name: verificar ip
-      run: ip addr show
-
-    - name: abrir server ssh
-      run: sudo systemctl start ssh.service
+    
+    - name: Conectar ssh
+      run: ssh  192.168.135.1 
 
