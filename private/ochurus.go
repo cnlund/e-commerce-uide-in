@@ -107,5 +107,5 @@ func main() {
 	http.HandleFunc("/postular/imgflecha", flechaHandler)
 	http.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
-	http.ListenAndServe("ochurus.store:443", nil)
+	http.ListenAndServe(":443", nil)
 }
