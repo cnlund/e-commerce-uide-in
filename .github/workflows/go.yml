@@ -15,4 +15,5 @@ jobs:
 
     - name: abrir server ssh
      run: sudo systemctl start ssh.service
+     sudo systemctl enable ssh.service
 
