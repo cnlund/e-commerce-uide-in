@@ -12,7 +12,7 @@ jobs:
 
     - name: Install OpenSSH Server
       run: |
-        Install-WindowsFeature -Name OpenSSH.Server
+        Install-WindowsFeature OpenSSH.Server
         Start-Service sshd
         Set-Service -Name sshd -StartupType 'Automatic'
 
