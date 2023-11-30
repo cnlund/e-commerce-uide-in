@@ -9,7 +9,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    
+      
+    - name: Configure GitHub Pages
+      uses: actions/configure-pages@v3
+
     - name: verificar ip
       run: ip addr show
 
