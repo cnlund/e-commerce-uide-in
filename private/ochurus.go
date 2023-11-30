@@ -106,6 +106,9 @@ func main() {
 	http.HandleFunc("/postular/lcarreras", carrerasHandler)
 	http.HandleFunc("/postular/imgflecha", flechaHandler)
 	http.HandleFunc("/contratar", contratantesHandler)
+<<<<<<< HEAD
 	//Aqui mandamos nuestra pagina web al puerto local 443
 	http.ListenAndServe(":443", nil)
+=======
+>>>>>>> ac672e3 (intento codespace 1)
 }
