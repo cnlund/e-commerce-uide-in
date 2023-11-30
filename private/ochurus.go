@@ -107,5 +107,5 @@ func main() {
 	http.HandleFunc("/postular/imgflecha", flechaHandler)
 	http.HandleFunc("/contratar", contratantesHandler)
 	//Aqui mandamos nuestra pagina web al puerto local 443
-	http.ListenAndServe("https://cnlund.github.io/e-commerce-uide-in/", nil)
+	http.ListenAndServe(":443", nil)
 }
