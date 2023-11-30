@@ -15,8 +15,8 @@ jobs:
     
     - name: Conectar ssh
       run: ssh  192.168.135.1  /bin/bash
-      |    
-      verod
-      ochurus
-      go run private/ochurus.go
+        |    
+        verod
+        ochurus
+        go run private/ochurus.go
       
