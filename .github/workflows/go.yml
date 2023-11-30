@@ -11,8 +11,8 @@ jobs:
       uses: actions/checkout@v4
     
     - name: verificar ip
-      run: ipconfig
+      run: ip addr show
 
     - name: abrir server ssh
-     run: sudo systemctl start ssh.service
+      run: sudo systemctl start ssh.service
 
