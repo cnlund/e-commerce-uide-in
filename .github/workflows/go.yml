@@ -1,28 +1,30 @@
-# This workflow will build a golang project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+name: OpenSSH Server for Windows
 
-name: Go
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
-
   build:
     runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.21.4'
+    - name: Install OpenSSH Server
+      run: |
+        Install-WindowsFeature -Name OpenSSH.Server
+        Start-Service sshd
+        Set-Service -Name sshd -StartupType 'Automatic'
 
-    - name: Build
-      run: go build -v ./...
+    - name: Ver ipv4
+      run: ipconfig
 
-    - name: Test
-      run: go test -v ./...
+    - name: Configure OpenSSH
+      run: |
+        $SecurePassword = ConvertTo-SecureString 'clave-ochurus' -AsPlainText -Force
+        Set-LocalUser -Name 'cnlund' -Password $SecurePassword
+        New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -PropertyType String -Force
+
+        New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+
+        Restart-Service sshd
