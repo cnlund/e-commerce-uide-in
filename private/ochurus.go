@@ -101,11 +101,14 @@ func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	//Creamos los handlerfuncs
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("./postular", postulanteHandler)
-	http.HandleFunc("./postular/lciudades", ciudadesHandler)
-	http.HandleFunc("./postular/lcarreras", carrerasHandler)
-	http.HandleFunc("./postular/imgflecha", flechaHandler)
+	http.HandleFunc("/postular", postulanteHandler)
+	http.HandleFunc("/postular/lciudades", ciudadesHandler)
+	http.HandleFunc("/postular/lcarreras", carrerasHandler)
+	http.HandleFunc("/postular/imgflecha", flechaHandler)
 	http.HandleFunc("/contratar", contratantesHandler)
-	//nos conectamos al puerto local 443
-	http.ListenAndServe(":443", nil)
+	//coneccion con la api
+	opt := option.WithCredentialsFile("path/to/serviceAccountKey.json")
+	app, err := firebase.NewApp(context.Background(), nil, opt)
+	if err != nil {
+	return nil, fmt.Errorf("error initializing app: %v", err)
 }
