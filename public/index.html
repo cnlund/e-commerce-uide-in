@@ -2,286 +2,153 @@
 
 <head>
     <title>Ochurus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <style>
-        @media screen and (min-device-width:1024px) and (max-device-width:1960px) and (min-device-height:569px) and (max-device-height:1080px) {
-            .franja_superior {
-                margin: auto;
-                background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
-                display: flex;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                justify-content: space-between;
-            }
-
-            .titulo {
-                font-family: "Monday Rain";
-                font-size: 15vh;
-                margin-top: 2vh;
-                margin-left: 5vh;
-                word-wrap: break-word;
-            }
-
-            .cslogan {
-                margin-top: 7vh;
-                padding-left: 20vw;
-                padding-right: 1vw;
-                display: flex;
-                flex-wrap: wrap;
-                min-width: fit-content;
-            }
-
-            .slogan {
-                background-color: #bda50700;
-                font-family: "Monday Rain";
-                font-size: 4vh;
-                text-align: left;
-                margin-top: -2vh;
-                padding-bottom: 1vh;
-                margin-left: 20vw;
-                word-wrap: break-word;
-            }
-
-            .inferior {
-                display: flex;
-                flex-wrap: wrap;
-                min-width: fit-content;
-            }
-
-            .definicion {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-            }
-
-            .mision {
-                width: fit-content;
-                padding: 1vh;
-                margin: 5vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                font-size: 3vh;
-                word-wrap: break-word;
-
-            }
-
-            .cmision {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                align-items: center;
-
-            }
-
-            .creditos {
-                word-wrap: break-word;
-                margin-top: -12vh;
-                display: flex;
-                justify-content: first baseline;
-                margin-left: 5vw;
-            }
-
-            .usuarios {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                grid-template-columns: repeat(2, 1fr);
-                justify-content: center;
-
-            }
-
-            .cpostulantes {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                border: 0.5vh solid #302b2b;
-                margin-right: 1vw;
-                margin-left: 1vw;
-                padding: 1vh;
-            }
-
-            .Postulantes {
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
-
-            .postext {
-                word-wrap: break-word;
-                font-size: 3vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
-
-            .Ofertantes {
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
-
-            .cofertantes {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                border: 0.5vh solid #302b2b;
-                margin-left: 1vw;
-                margin-right: 1vw;
-                padding: 1vh;
-            }
-
-            .ofetext {
-                word-wrap: break-word;
-                font-size: 3vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
-
-            .boton {
-                word-wrap: break-word;
-                margin-top: 1vh;
-                margin-left: 2vh;
-                font-size: 3vh;
-            }
+        .franja_superior {
+            margin: auto;
+            background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
+            display: flex;
+            flex-wrap: wrap;
+            min-width: fit-content;
+            justify-content: space-between;
         }
 
-        @media screen and (min-device-width:1px) and (max-device-width:1280px) and (min-device-height:1px) and (max-device-height:1500px) {
-            @font-face {
-                font-family: 'Monday Rain';
-                src: url('Monday_Rain/Monday-Rain.eot');
-                src: url('Monday_Rain/Monday-Rain.eot?#iefix') format('embedded-opentype'),
-                    url('Monday_Rain/Monday-Rain.woff2') format('woff2'),
-                    url('Monday_Rain/Monday-Rain.woff') format('woff'),
-                    url('Monday_Rain/Monday-Rain.ttf') format('truetype'),
-                    url('Monday_Rain/Monday-Rain.svg#Monday Rain') format('svg');
-            }
+        .titulo {
+            font-family: 'Indie Flower', cursive;
+            font-size: 15vh;
+            margin-top: 2vh;
+            margin-left: 5vh;
+            word-wrap: break-word;
+        }
 
-            .titulo{
-                font-family: "Monday Rain";
-                font-size: 8vh;
-            }
-            .creditos{
-                margin-top: -6vh;
-                font-size: 2vh;
-            }
-            .cslogan{
-                max-width: 100%;
-                background-color: white;
-                border-radius: 3vh;
-                text-align: center;
-            }
-            .slogan{
-                padding: 2vh;
-                font-size: 3vh;
-            }
-            .franja_superior {
-                margin: auto;
-                background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
-                display: flex;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                justify-content: space-between;
-                padding: 2vh;
-            }
+        .cslogan {
+            margin-top: 7vh;
+            padding-left: 20vw;
+            padding-right: 1vw;
+            display: flex;
+            flex-wrap: wrap;
+            min-width: fit-content;
+        }
 
-            .inferior {
-                display: flex;
-                flex-wrap: wrap;
-                min-width: fit-content;
-            }
+        .slogan {
+            background-color: #bda50700;
+            font-family: 'Indie Flower', cursive;
+            font-size: 4vh;
+            text-align: left;
+            margin-top: -2vh;
+            padding-bottom: 1vh;
+            margin-left: 20vw;
+            word-wrap: break-word;
+        }
 
-            .definicion {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-            }
+        .inferior {
+            display: flex;
+            flex-wrap: wrap;
+            min-width: fit-content;
+        }
 
-            .mision {
-                width: fit-content;
-                padding: 1vh;
-                margin: 5vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                font-size: 3vh;
-                word-wrap: break-word;
+        .definicion {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: fit-content;
+        }
 
-            }
+        .mision {
+            width: fit-content;
+            padding: 1vh;
+            margin: 5vh;
+            text-align: justify;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 3vh;
+            word-wrap: break-word;
 
-            .cmision {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                align-items: center;
+        }
 
-            }
+        .cmision {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: fit-content;
+            align-items: center;
 
-            .usuarios {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                grid-template-columns: repeat(2, 1fr);
-                justify-content: center;
+        }
 
-            }
+        .creditos {
+            word-wrap: break-word;
+            margin-top: -12vh;
+            display: flex;
+            justify-content: first baseline;
+            margin-left: 5vw;
+        }
 
-            .cpostulantes {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                border: 0.5vh solid #302b2b;
-                margin-right: 1vw;
-                margin-left: 1vw;
-                padding: 1vh;
-            }
+        .usuarios {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: fit-content;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
 
-            .Postulantes {
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        }
 
-            .postext {
-                
-                word-wrap: break-word;
-                font-size: 3vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        .cpostulantes {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: fit-content;
+            border: 0.5vh solid #302b2b;
+            margin-right: 1vw;
+            margin-left: 1vw;
+            padding: 1vh;
+        }
 
-            .Ofertantes {
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        .Postulantes {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
 
-            .cofertantes {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                min-width: fit-content;
-                border: 0.5vh solid #302b2b;
-                margin-left: 1vw;
-                margin-right: 1vw;
-                padding: 1vh;
-            }
+        .postext {
+            word-wrap: break-word;
+            font-size: 3vh;
+            text-align: justify;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
 
-            .ofetext {
-                word-wrap: break-word;
-                font-size: 3vh;
-                text-align: justify;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            }
+        .Ofertantes {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
 
-            .boton {
-                word-wrap: break-word;
-                margin-top: 1vh;
-                margin-left: 2vh;
-                font-size: 3vh;
-            }
+        .cofertantes {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: fit-content;
+            border: 0.5vh solid #302b2b;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            padding: 1vh;
+        }
+
+        .ofetext {
+            word-wrap: break-word;
+            font-size: 3vh;
+            text-align: justify;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .boton {
+            word-wrap: break-word;
+            margin-top: 1vh;
+            margin-left: 2vh;
+            font-size: 3vh;
         }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    </head>
+</head>
+
 <body>
     <div class="Contenedor">
         <!--Empezamos con la codificacion de la pagina principal-->
@@ -294,7 +161,7 @@
             </div>
             <!-- En esta parte colocamos nuestro slogan -->
             <div class="cslogan">
-                <h1 class="slogan">Bienvenido a Ochurus, creado 
+                <h1 class="slogan">Bienvenido a Ochurus, creado
                     por estudiantes para estudiantes</h1>
             </div>
         </div>
@@ -325,7 +192,7 @@
                             Carrera de la que te graduaste y una breve descripcion de ti.
                         </h1>
                     </div>
-                    <form action="/postular" method="get">
+                    <form action="/postular" method="post">
                         <button type="submit" class="boton postular">Postularse</button>
                     </form>
                 </div>
@@ -346,18 +213,6 @@
             </div>
         </div>
     </div>
-    <script>
-        fetch("/")
-        .then(response => {
-            const contentType = response.headers.get('Content-Type');
-            if (contentType == contentType.includes("json")){
-                return response.json();
-            }
-        })
-        .then(data => {
-                document.body.style.fontfamily = "Monday Rain";
-                document.body.style.fontface.src = url(data.ttf)
-            })
-    </script>
 </body>
+
 </html>

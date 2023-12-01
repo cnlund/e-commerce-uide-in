@@ -27,14 +27,6 @@ type Skills struct {
 	Carrera_pert int
 }
 
-// Struct tipografias para el html
-type Tipografia struct {
-	ttf   string
-	otf   string
-	woff  string
-	woff2 string
-}
-
 // Zona de los Handlers------------------------------------------------------------------
 
 // Handler para enviar el index.html
@@ -42,26 +34,17 @@ func handlerindex(c *fiber.Ctx) error {
 	return c.Render("index", ".html")
 }
 
-// Handler para enviar la tipografia monday rain
-func handlerMondayrain(c *fiber.Ctx) error {
-	mr := Tipografia{
-		ttf:   "public/Monday_rain/Monday_Rain.ttf",
-		otf:   "public/Monday_rain/Monday-Rain.otf",
-		woff:  "public/Monday_rain/Monday-Rain.woff",
-		woff2: "public/Monday_rain/Monday-Rain.woff2",
-	}
-	error := c.BodyParser(mr)
-	if error != nil {
-		return error
-	}
-	return c.Status(fiber.StatusOK).JSON(mr)
+// Handler para enviar hacia postular.html
+func handlerpostular(c *fiber.Ctx) error {
+	return c.Render("postulacion", ".html")
 }
 
 // -----------------------------------------------------------------------------------------
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-	app.Post("/", handlerindex, handlerMondayrain)
+	app.Post("/", handlerindex)
+	app.Post("/postular", handlerpostular)
 	//conexion con la api
 	opt := option.WithCredentialsFile("servicekey.json")
 	_, err := firebase.NewApp(context.Background(), nil, opt)
