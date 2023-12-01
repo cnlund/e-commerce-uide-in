@@ -107,7 +107,7 @@ func main() {
 	http.HandleFunc("/postular/imgflecha", flechaHandler)
 	http.HandleFunc("/contratar", contratantesHandler)
 	//coneccion con la api
-	opt := option.WithCredentialsFile("path/to/serviceAccountKey.json")
+	opt := option.WithCredentialsFile("/")
 	app, err := firebase.NewApp(context.Background(), nil, opt)
 	if err != nil {
 	return nil, fmt.Errorf("error initializing app: %v", err)
