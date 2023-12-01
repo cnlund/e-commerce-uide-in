@@ -1,17 +1,12 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
-	"log"
-	"net/http"
-	"text/template"
+	"context"
 
-	_ "github.com/denisenkom/go-mssqldb"
+	firebase "firebase.google.com/go"
+	"github.com/gofiber/fiber/v2"
+	"google.golang.org/api/option"
 )
-
-// variable de la base de datos
-var db *sql.DB
 
 // Zona de los Structs-------------------------------------------------------------------
 
@@ -32,83 +27,46 @@ type Skills struct {
 	Carrera_pert int
 }
 
+// Struct tipografias para el html
+type Tipografia struct {
+	ttf   string
+	otf   string
+	woff  string
+	woff2 string
+}
+
 // Zona de los Handlers------------------------------------------------------------------
-// Handler de la pagina de INICIO
-func indexHandler(rw http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("public/index.html")
-	if err != nil {
-		log.Fatal("Fallo la funcion de INDEX ", err)
-	} else {
-		template.Execute(rw, nil)
-	}
+
+// Handler para enviar el index.html
+func handlerindex(c *fiber.Ctx) error {
+	return c.Render("index", ".html")
 }
 
-// Handler de la pagina de POSTULANTES
-func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("public/postulacion.html")
-	if err != nil {
-		log.Fatal(err)
+// Handler para enviar la tipografia monday rain
+func handlerMondayrain(c *fiber.Ctx) error {
+	mr := Tipografia{
+		ttf:   "public/Monday_rain/Monday_Rain.ttf",
+		otf:   "public/Monday_rain/Monday-Rain.otf",
+		woff:  "public/Monday_rain/Monday-Rain.woff",
+		woff2: "public/Monday_rain/Monday-Rain.woff2",
 	}
-	template.Execute(rw, nil)
-}
-
-// handler de imagen prueba
-func flechaHandler(rw http.ResponseWriter, r *http.Request) {
-	fimg, error := template.ParseFiles("public/Imagenes/flechita.webp")
+	error := c.BodyParser(mr)
 	if error != nil {
-		log.Fatal("Fallo la funcion de FLECHA ", error)
+		return error
 	}
-	fimg.Execute(rw, nil)
-}
-
-// Handler de almacenamiento de ciudades
-func ciudadesHandler(w http.ResponseWriter, r *http.Request) {
-	var cnombre string
-	rows, _ := db.Query("SELECT Ciudad_nombre FROM Ciudades")
-	for rows.Next() {
-		rows.Scan(&cnombre)
-		fmt.Fprintln(w, cnombre)
-	}
-}
-
-// Handler de almacenamiento de carreras
-func carrerasHandler(rw http.ResponseWriter, r *http.Request) {
-	var cnombre string
-	rows, _ := db.Query("SELECT Carrera_nombre FROM Carreras")
-	for rows.Next() {
-		rows.Scan(&cnombre)
-		fmt.Fprintln(rw, cnombre)
-	}
-}
-
-// Handler de la pagina de CONTRATANTES
-func contratantesHandler(rw http.ResponseWriter, r *http.Request) {
-	template, _ := template.ParseFiles("public/contratar.html")
-	template.Execute(rw, nil)
+	return c.Status(fiber.StatusOK).JSON(mr)
 }
 
 // -----------------------------------------------------------------------------------------
 func main() {
-	//Zona de BDD---------------------------------------------------------------------------
-	var err error
-	//Hacemos la conexion
-	db, err = sql.Open("sqlserver", "server=CNLUNDPC;port=1433; database=Ochurus_DB")
-	if err != nil {
-		log.Fatal("Error al conectarse con la BDD: " + err.Error())
-	}
-	log.Printf("Se conecto!!!")
-	defer db.Close()
 	// Zona HTML----------------------------------------------------------------------------
-	//Creamos los handlerfuncs
-	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/postular", postulanteHandler)
-	http.HandleFunc("/postular/lciudades", ciudadesHandler)
-	http.HandleFunc("/postular/lcarreras", carrerasHandler)
-	http.HandleFunc("/postular/imgflecha", flechaHandler)
-	http.HandleFunc("/contratar", contratantesHandler)
-	//coneccion con la api
-	opt := option.WithCredentialsFile("/servicekey.json")
-	app, err := firebase.NewApp(context.Background(), nil, opt)
+	app := fiber.New()
+	app.Post("/", handlerindex, handlerMondayrain)
+	//conexion con la api
+	opt := option.WithCredentialsFile("servicekey.json")
+	_, err := firebase.NewApp(context.Background(), nil, opt)
 	if err != nil {
-	return nil, fmt.Errorf("error initializing app: %v", err)
+		return
+	}
+	app.Listen(":3433")
 }
