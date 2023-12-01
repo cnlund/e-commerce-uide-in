@@ -35,7 +35,7 @@ type Skills struct {
 // Zona de los Handlers------------------------------------------------------------------
 // Handler de la pagina de INICIO
 func indexHandler(rw http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./public/index.html")
+	template, err := template.ParseFiles("public/index.html")
 	if err != nil {
 		log.Fatal("Fallo la funcion de INDEX ", err)
 	} else {
@@ -45,7 +45,7 @@ func indexHandler(rw http.ResponseWriter, r *http.Request) {
 
 // Handler de la pagina de POSTULANTES
 func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
-	template, err := template.ParseFiles("./public/postulacion.html")
+	template, err := template.ParseFiles("public/postulacion.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -54,7 +54,7 @@ func postulanteHandler(rw http.ResponseWriter, r *http.Request) {
 
 // handler de imagen prueba
 func flechaHandler(rw http.ResponseWriter, r *http.Request) {
-	fimg, error := template.ParseFiles("./public/Imagenes/flechita.webp")
+	fimg, error := template.ParseFiles("public/Imagenes/flechita.webp")
 	if error != nil {
 		log.Fatal("Fallo la funcion de FLECHA ", error)
 	}
@@ -83,7 +83,7 @@ func carrerasHandler(rw http.ResponseWriter, r *http.Request) {
 
 // Handler de la pagina de CONTRATANTES
 func contratantesHandler(rw http.ResponseWriter, r *http.Request) {
-	template, _ := template.ParseFiles("./public/contratar.html")
+	template, _ := template.ParseFiles("public/contratar.html")
 	template.Execute(rw, nil)
 }
 
