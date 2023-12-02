@@ -31,12 +31,12 @@ type Skills struct {
 
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
-	return c.Render("index", ".html")
+	return c.Render("/public/index.html", "/")
 }
 
 // Handler para enviar hacia postular.html
 func handlerpostular(c *fiber.Ctx) error {
-	return c.Render("postulacion", ".html")
+	return c.Render("/public/postulacion.html", "/postular")
 }
 
 // -----------------------------------------------------------------------------------------

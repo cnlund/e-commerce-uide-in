@@ -209,32 +209,5 @@
             </div>
         </div>
     </div>
-    <!--Aqui empieza el script que une la BDD con el HTML para que asi 
-                se pueda recibir la informacion-->
-    <script>
-        var sciudades = document.getElementById("ciudades")
-        var scarreras = document.getElementById("carreras")
-        fetch("/postular/lciudades")
-            .then(response => response.text())
-            .then(data => {
-                var ciudades = data.split('\n');
-                for (var i = 0; i < ciudades.length - 1; i++) {
-                    var noption = "<option value=" + i + ">" + ciudades[i] + "</option>"
-                    sciudades.innerHTML += noption
-                }
-            })
-            .catch(error => console.error('Error al leer el archivo:', error));
-        fetch("/postular/lcarreras")
-            .then(response => response.text())
-            .then(data => {
-                var carreras = data.split('\n');
-                for (var i = 0; i < carreras.length - 1; i++) {
-                    var noption = "<option value=" + i + ">" + carreras[i] + "</option>"
-                    scarreras.innerHTML += noption
-                }
-            })
-            .catch(error => console.error('Error al leer el archivo:', error));
-    </script>
 </body>
-
 </html>
