@@ -1,91 +1,212 @@
 <html lang="es">
-    <head>
-        <title>
-            Ochurus Contratantes
-        </title>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: Arial, Helvetica, sans-serif;
-                text-transform: capitalize;
-                text-decoration: none;     
-            }
-            body{
-                min-height: 100vh;
-            }
-            header{
-                position: fixed;
-                top: 0; left: 0; right: 0;
-                background: #790909;
-                box-shadow: 0 5px 10px rgba(0,0,0,.3);
-                padding: 0px 7%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .logo{
-                font-weight: bolder;
-                font-size: 5vh;
-                color: #fff;
-            }
-            .navciudad ul{
-                list-style: none;
-            }
-            .navciudad ul li{
-                position: relative;
-                float: left;
-            }
-            .navciudad ul li a{
-                font-size: 2vh;
-                padding: 20px;
-                color: #fff;
-                display: block;
-            }
-            .navciudad ul li a:hover{
-                background: #fff;
-                color: #333;
-            }
-            .navciudad ul li ul{
-                position: absolute;
-                left: 0;
-                width: 200px;
-                background-color: #790909;
-                display: none;
-            }
-            .navciudad ul li ul li{
-                width: 100%;
-                border-top: 1px solid rgba(0,0,0,.1);
-            } 
-            .navciudad ul li ul li ul{
-                left: -200px;
-                top: 0;
-            }
-            .navciudad ul li:focus-within > ul,.navciudad ul li:hover > ul{
-                display: initial;
-            }
 
-        </style>
-    </head>       
-    <body>
-        <header>
-           <h1 class="logo">CONTRATAR</h1>
-            
-           <nav class="navciudad">
-                <ul>
-                    <li><a href="#">ciudades</a>
-                        <ul>
-                            <li>
-                                <!--Insertado de ciudades para poder navegar en la base de datos-->
-                                <a href="#">Cuenca+</a>
-                                <a href="#">Quito+</a>
-                                <a href="#">Guayaquil+</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-           </nav>
-        </header>
-    </body>
+<head>
+    <title>
+        Ochurus Contratantes
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #790909;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+            padding: 0px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: bolder;
+            font-size: 5vh;
+            color: #fff;
+        }
+
+        .navciudad ul {
+            list-style: none;
+        }
+
+        .navciudad ul li {
+            position: relative;
+            float: left;
+        }
+
+        .navciudad ul li a {
+            font-size: 2vh;
+            padding: 20px;
+            color: #fff;
+            display: block;
+        }
+
+        .navciudad ul li a:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        .navciudad ul li ul {
+            position: absolute;
+            left: 0;
+            width: 200px;
+            background-color: #790909;
+            display: none;
+        }
+
+        .navciudad ul li ul li {
+            width: 100%;
+            border-top: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .navciudad ul li ul li ul {
+            left: -200px;
+            top: 0;
+        }
+
+        .navciudad ul li:focus-within>ul,
+        .navciudad ul li:hover>ul {
+            display: initial;
+        }
+
+        .Atras {
+            background-color: transparent;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            font-size: 2vh;
+            padding: 1vh 2vw;
+            border: 2px solid #790909;
+            border-radius: 2vh;
+            cursor: pointer;
+            transition: all 1s ease;
+            box-shadow: .5rem .5rem 1rem #880808,
+                -.5rem -.5rem 1rem #790909;
+
+        }
+
+        .Atras:hover {
+            box-shadow: .5rem .5rem 1rem #790909,
+                -.5rem -.5rem 1rem #880808;
+        }
+
+        .Atras:active {
+            box-shadow: inset .2rem .2rem 1rem #880808,
+                -.2rem -.2rem 1rem #790909;
+        }
+
+        .Inferior {
+            margin-top: 9vh;
+        }
+
+        .Postulante {
+
+            border: none;
+            border-bottom: #333 solid;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .PostBox {
+            padding: 1vh;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .name {
+            font-weight: light;
+        }
+
+        .carrera {
+            font-size: 3vh;
+            font-weight: lighter;
+            padding: 1vh;
+        }
+
+        .botonbox {
+            padding: 1vh;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .Vermas {
+            padding: 2vh;
+            color: #fff;
+            font-weight: bold;
+            background-color: #790909;
+            box-shadow: none;
+            border: none;
+            border-radius: 3vh;
+        }
+
+        .Vermas:hover {
+            background-color: #fff;
+            color: #790909;
+            border-color: #790909;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--boton que nos permetira regresar a la pagina principal
+-->
+        <button class="Atras">ATRAS</button>
+
+        <h1 class="logo">CONTRATAR</h1>
+
+        <nav class="navciudad">
+            <ul>
+                <li><a href="#">ciudades</a>
+                    <ul>
+                        <li>
+                            <!--Insertado de ciudades para poder navegar en la base de datos-->
+                            <a href="#">Cuenca+</a>
+                            <a href="#">Quito+</a>
+                            <a href="#">Guayaquil+</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="Inferior">
+        <!--El div Postulante es el formato en el que se presentara a cada postulante
+            en este caso se ubico dos ejemplos para saber como debe quedar-->
+        <div class="Postulante">
+            <div class="PostBox">
+                <h1 class="name">Marcelo Israel Barrera Espinoza</h1>
+                <h1 class="carrera">Ingeniero en Sistemas</h1>
+            </div>
+            <div class="botonbox">
+                <button class="Vermas">Ver Mas</button>
+            </div>
+        </div>
+        <div class="Postulante">
+            <div class="PostBox">
+                <h1 class="name">Nicolas Luna</h1>
+                <h1 class="carrera">Ingeniero en Sistemas</h1>
+            </div>
+            <div class="botonbox">
+                <button class="Vermas">Ver Mas</button>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
