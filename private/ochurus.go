@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"context"
 
 	firebase "firebase.google.com/go"
@@ -31,12 +32,12 @@ type Skills struct {
 
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
-	return c.Render("/public/index.html", "/")
+	return c.SendFile("public/index.html")
 }
 
 // Handler para enviar hacia postular.html
 func handlerpostular(c *fiber.Ctx) error {
-	return c.Render("/public/postulacion.html", "/postular")
+	return c.SendFile("public/postulacion.html")
 }
 
 // -----------------------------------------------------------------------------------------
@@ -46,10 +47,18 @@ func main() {
 	app.Post("/", handlerindex)
 	app.Post("/postular", handlerpostular)
 	//conexion con la api
-	opt := option.WithCredentialsFile("servicekey.json")
-	_, err := firebase.NewApp(context.Background(), nil, opt)
+	ctx := context.Background()
+	sa := option.WithCredentialsFile("servicekey.json")
+	api, err := firebase.NewApp(ctx, nil, sa)
 	if err != nil {
-		return
+	log.Fatalln(err)
 	}
-	app.Listen(":3433")
+
+	client, err := api.Firestore(ctx)
+	if err != nil {
+	log.Fatalln(err)
+	}
+	defer client.Close()
+	//creamos la conexion del puerto
+	app.Listen(":443")
 }
