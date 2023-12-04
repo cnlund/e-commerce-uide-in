@@ -1,8 +1,8 @@
 package main
 
 import (
-	"log"
 	"context"
+	"log"
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
@@ -44,19 +44,19 @@ func handlerpostular(c *fiber.Ctx) error {
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-	app.Post("/", handlerindex)
+	app.Get("/", handlerindex)
 	app.Post("/postular", handlerpostular)
 	//conexion con la api
 	ctx := context.Background()
 	sa := option.WithCredentialsFile("servicekey.json")
 	api, err := firebase.NewApp(ctx, nil, sa)
 	if err != nil {
-	log.Fatalln(err)
+		log.Fatalln(err)
 	}
 
 	client, err := api.Firestore(ctx)
 	if err != nil {
-	log.Fatalln(err)
+		log.Fatalln(err)
 	}
 	defer client.Close()
 	//creamos la conexion del puerto
