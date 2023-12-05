@@ -13,6 +13,8 @@
             flex-wrap: wrap;
             min-width: fit-content;
             justify-content: space-between;
+            align-items: center;
+
         }
 
         .titulo {
@@ -24,20 +26,19 @@
         }
 
         .cslogan {
-            margin-top: 7vh;
+            align-items: center;
             padding-left: 20vw;
-            padding-right: 1vw;
             display: flex;
             flex-wrap: wrap;
             min-width: fit-content;
         }
 
         .slogan {
+            align-items: center;
             background-color: #bda50700;
             font-family: 'Indie Flower', cursive;
             font-size: 4vh;
             text-align: left;
-            margin-top: -2vh;
             padding-bottom: 1vh;
             margin-left: 20vw;
             word-wrap: break-word;
@@ -105,6 +106,10 @@
             padding: 1vh;
         }
 
+        .postulacion {
+            margin: 3vh;
+        }
+
         .Postulantes {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
@@ -120,6 +125,10 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
+        .contratacion {
+            margin: 3vh
+        }
+
         .cofertantes {
             display: flex;
             flex-direction: column;
@@ -129,6 +138,7 @@
             margin-left: 1vw;
             margin-right: 1vw;
             padding: 1vh;
+            margin-top: 4vh;
         }
 
         .ofetext {
@@ -192,9 +202,7 @@
                             Carrera de la que te graduaste y una breve descripcion de ti.
                         </h1>
                     </div>
-                        <form action="/postular" method="post">
-                            <button class="boton postular">Postularse</button>
-                        </form>
+                    <button onclick="irapostular()" id="bpostular" class="boton postular">Postularse</button>
                 </div>
                 <div class="contratacion">
                     <div class="cofertantes">
@@ -206,12 +214,26 @@
                             o tu empresa
                         </h1>
                     </div>
-                    <form action="/contratar" method="get">
-                        <button type="submit" class="boton contratar">Contratar</button>
-                    </form>
                 </div>
+                <form action="/contratar" method="get">
+                    <button type="submit" class="boton contratar">Contratar</button>
+                </form>
             </div>
         </div>
     </div>
+    <script>
+        function irapostular() {
+            var bpostular = document.getElementById("bpostular")
+            fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/postular")
+                .then(response => response.text())
+                .then(data => {
+                    document.body.innerHTML = data
+                })
+       
+        }
+    </script>
+    <!--codigo de los anuncios publicitarios del google-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
+        crossorigin="anonymous"></script>
 </body>
 </html>

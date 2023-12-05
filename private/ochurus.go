@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"log"
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
 	"google.golang.org/api/option"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
 // Zona de los Structs-------------------------------------------------------------------
@@ -32,19 +32,27 @@ type Skills struct {
 
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
-	return c.SendFile("public/index.html")
+	template, _ := template.ParseFiles("public/index.html")
+	return template.Execute(c,nil)
 }
 
 // Handler para enviar hacia postular.html
 func handlerpostular(c *fiber.Ctx) error {
-	return c.SendFile("public/postulacion.html")
+	template, _ := template.ParseFiles("public/postular/postulacion.html")
+	return template.Execute(c, nil)
+}
+
+//Handler para ir a contratar
+func handlercontratar(c *fiber.Ctx) error {
+	template, _ := template.ParseFiles("public/contratar.html")
+	return template.Execute(c, nil)
 }
 
 // -----------------------------------------------------------------------------------------
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-	app.Get("/", handlerindex)
+	app.Post("/", handlerindex)
 	app.Post("/postular", handlerpostular)
 	//conexion con la api
 	ctx := context.Background()
@@ -60,5 +68,5 @@ func main() {
 	}
 	defer client.Close()
 	//creamos la conexion del puerto
-	app.Listen(":443")
+	app.Listen(":3000")
 }
