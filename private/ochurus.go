@@ -2,16 +2,13 @@ package main
 
 import (
 	"context"
-<<<<<<< HEAD
-	"log"
-=======
 	"html/template"
->>>>>>> 936ff2e (Co-authored-by: BARRERA ESPINOZA MARCELO <mabarreraes@uide.edu.ec>)
+	"log"
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
-	"google.golang.org/api/option"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"google.golang.org/api/option"
 )
 
 // Zona de los Structs-------------------------------------------------------------------
@@ -38,7 +35,7 @@ type Skills struct {
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
 	template, _ := template.ParseFiles("public/index.html")
-	return template.Execute(c,nil)
+	return template.Execute(c, nil)
 }
 
 // Handler para enviar hacia postular.html
@@ -47,7 +44,7 @@ func handlerpostular(c *fiber.Ctx) error {
 	return template.Execute(c, nil)
 }
 
-//Handler para ir a contratar
+// Handler para ir a contratar
 func handlercontratar(c *fiber.Ctx) error {
 	template, _ := template.ParseFiles("public/contratar.html")
 	return template.Execute(c, nil)
@@ -57,16 +54,11 @@ func handlercontratar(c *fiber.Ctx) error {
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-<<<<<<< HEAD
-	app.Get("/", handlerindex)
-	app.Post("/postular", handlerpostular)
-=======
 	app.Use(cors.New())
 	app.Get("/", handlerindex)
 	app.Get("/postular", handlerpostular)
 	app.Get("/contratar", handlercontratar)
 	app.Static("/flechaimg", "public/Imagenes/flechita.webp")
->>>>>>> 936ff2e (Co-authored-by: BARRERA ESPINOZA MARCELO <mabarreraes@uide.edu.ec>)
 	//conexion con la api
 	ctx := context.Background()
 	sa := option.WithCredentialsFile("servicekey.json")
