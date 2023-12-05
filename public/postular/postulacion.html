@@ -160,7 +160,7 @@
         <div class="franja_superior">
             <ul>
                 <li class="li2">
-                    <button onclick="regresar()" id="bregresar" class="regresar"></button></form>
+                    <button onclick="regresar()" id="bregresar" class="regresar"> <img src="https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/flechaimg"> </button></form>
                 </li>
 
                 <li class="li1">
@@ -212,18 +212,12 @@
         </div>
     </div>
     <script>
-        fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/flechaimg")
-            .then(response => response.url())
-            .then(data =>{
-                document.bregresar.innerHTML = "<img src='"+ data +"'>"
-            })
         function regresar() {
             fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/")
                 .then(response => response.text())
                 .then(data => {
                     document.body.innerHTML = data
                 })
-       
         }
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"

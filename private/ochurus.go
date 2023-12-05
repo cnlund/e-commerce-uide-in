@@ -59,6 +59,7 @@ func main() {
 	app.Get("/postular", handlerpostular)
 	app.Get("/contratar", handlercontratar)
 	app.Static("/flechaimg", "public/Imagenes/flechita.webp")
+	app.Static("/adstxt", "public/ads.txt")
 	//conexion con la api
 	ctx := context.Background()
 	sa := option.WithCredentialsFile("servicekey.json")
