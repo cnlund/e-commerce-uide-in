@@ -2,6 +2,11 @@ package main
 
 import (
 	"context"
+<<<<<<< HEAD
+	"log"
+=======
+	"html/template"
+>>>>>>> 936ff2e (Co-authored-by: BARRERA ESPINOZA MARCELO <mabarreraes@uide.edu.ec>)
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
@@ -52,8 +57,16 @@ func handlercontratar(c *fiber.Ctx) error {
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-	app.Post("/", handlerindex)
+<<<<<<< HEAD
+	app.Get("/", handlerindex)
 	app.Post("/postular", handlerpostular)
+=======
+	app.Use(cors.New())
+	app.Get("/", handlerindex)
+	app.Get("/postular", handlerpostular)
+	app.Get("/contratar", handlercontratar)
+	app.Static("/flechaimg", "public/Imagenes/flechita.webp")
+>>>>>>> 936ff2e (Co-authored-by: BARRERA ESPINOZA MARCELO <mabarreraes@uide.edu.ec>)
 	//conexion con la api
 	ctx := context.Background()
 	sa := option.WithCredentialsFile("servicekey.json")
