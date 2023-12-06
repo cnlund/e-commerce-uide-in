@@ -229,9 +229,7 @@
             fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/postular")
                 .then(response => response.text())
                 .then(data => {
-                    var postular = window.location.assign("/postular")
-                    postular.document.body.innerHTML = data
-                    bpostular.href = URL.createObjectURL(postular)
+                    document.body.innerHTML = data
                 })
        
         }
