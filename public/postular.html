@@ -160,7 +160,9 @@
         <div class="franja_superior">
             <ul>
                 <li class="li2">
-                    <button onclick="regresar()" id="bregresar" class="regresar"> <img src="https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/flechaimg"> </button></form>
+                    <form action="/" method="get">
+                        <button type="submit" id="bregresar" class="regresar"> <img src="https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/flechaimg"> </button>
+                    </form>
                 </li>
 
                 <li class="li1">
@@ -172,36 +174,35 @@
             <!--Esta es la parte donde se mostrara en pantalla las entradas de datos
                     necesarias para la postulacion en el sitio web-->
             <div class="Datos">
-                <form>
+                <form method="post">
                     <div class="Nombre">
                         <h1>Nombres</h1>
-                        <input type="text" class="i name" id="name" name="name">
+                        <input type="text" class="i name" id="name" name="name", required>
                     </div>
                     <div class="Ciudad">
                         <h1>Ciudad</h1>
-                        <select class="i" id="ciudades">
+                        <select class="i" id="ciudades", required>
                             <option disabled selected>Escoge tu ciudad</option>
                         </select>
                     </div>
                     <div class="Correo">
                         <h1>Correo</h1>
-                        <input type="text" class="i mail" id="Mail" name="Mail">
+                        <input type="text" class="i mail" id="Mail" name="Mail", required>
                     </div>
                     <div class="Edad">
                         <h1>Fecha de nacimiento</h1>
-                        <input type="text" class="i" id="Fecha" name="Fecha">
-
+                        <input type="date" id="start" name="fecha-nacimiento" value="2005-01-01" min="1973-01-01" max="2005-12-31" />
                     </div>
                     <div class="Carrera">
                         <h1>Carrera</h1>
                         <div>
-                            <select class="i" id="carreras">
+                            <select class="i" id="carreras", required>
                                 <option disabled selected>Escoge tu carrera</option>
                             </select>
                         </div>
                     </div>
                     <div class="acuerdo">
-                        <input type="checkbox" class="i" id="acuerdo" name="acuerdo">
+                        <input type="checkbox" class="i" id="acuerdo" name="acuerdo", required>
                         <label for="acuerdo">Estoy de acuerdo con que compartan mis datos y me envien correos</label>
                     </div>
                     <div class="BotonPostularse">
@@ -211,15 +212,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function regresar() {
-            fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/")
-                .then(response => response.text())
-                .then(data => {
-                    document.body.innerHTML = data
-                })
-        }
-    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
         crossorigin="anonymous"></script>
 </body>

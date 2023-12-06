@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <style>
         .franja_superior {
             margin: auto;
@@ -204,7 +204,9 @@
                             Carrera de la que te graduaste y una breve descripcion de ti.
                         </h1>
                     </div>
-                    <button onclick="irapostular()" id="bpostular" class="boton postular">Postularse</button>
+                    <form action="/postular" method="get">
+                        <button type="submit" class="boton postular">Postular</button>
+                    </form>
                 </div>
                 <div class="contratacion">
                     <div class="cofertantes">
@@ -223,19 +225,9 @@
             </div>
         </div>
     </div>
-    <script>
-        function irapostular() {
-            var bpostular = document.getElementById("bpostular")
-            fetch("https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/postular")
-                .then(response => response.text())
-                .then(data => {
-                    document.body.innerHTML = data
-                })
-       
-        }
-    </script>
     <!--codigo de los anuncios publicitarios del google-->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 {
   "hosting": {
-    "public": "/public",
+    "public": "public",
     "ads.text": "/public/ads.text",
+    "postular": "/public/postular/postulacion.html",
     "ignore": [
       "firebase.json",
-      "**/.*",
+      "**/",
       "**/node_modules/**"
-    ]
+    ],
+    "cleanUrls": true
   }
 }
