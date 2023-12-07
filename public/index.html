@@ -8,157 +8,317 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
         crossorigin="anonymous"></script>
     <style>
-        .franja_superior {
-            margin: auto;
-            background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
-            display: flex;
-            flex-wrap: wrap;
-            min-width: fit-content;
-            justify-content: space-between;
-            align-items: center;
+        /*EN ESTA PARTE USAMOS EL COMANDO @media PARA MANEJAR UN ESTILO ESPECIFICO EN ORDENADORES*/
+        @media screen and (min-device-width:1281px) and (max-device-width:1960px) and (min-device-height:569px) and (max-device-height:1080px) {
+            .franja_superior {
+                margin: auto;
+                background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                justify-content: space-between;
 
+            }
+
+            .titulo {
+                font-family: 'Indie Flower', cursive;
+                font-size: 15vh;
+                margin-top: 2vh;
+                margin-left: 3vw;
+                word-wrap: break-word;
+            }
+
+            .creditos {
+                font-size: 3vh;
+                word-wrap: break-word;
+                margin-top: -15vh;
+                display: flex;
+                justify-content: first baseline;
+                margin-left: 3vw;
+            }
+
+            .cslogan {
+                align-items: center;
+                padding-left: 0vw;
+                display: flex;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
+
+            .slogan {
+                align-items: center;
+                background-color: #bda50700;
+                font-family: 'Indie Flower', cursive;
+                font-size: 4vh;
+                padding-bottom: 1vh;
+                margin-left: 0vw;
+                word-wrap: break-word;
+                margin-right: 5vh;
+            }
+
+            .inferior {
+                display: flex;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
+
+            .definicion {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
+
+            .mision {
+                width: fit-content;
+                padding: 1vh;
+                margin: 5vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 3vh;
+                word-wrap: break-word;
+
+            }
+
+            .cmision {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                align-items: center;
+            }
+
+
+
+            .usuarios {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+
+            }
+
+            .cpostulantes {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                border: 0.5vh solid #302b2b;
+                margin-right: 1vw;
+                margin-left: 1vw;
+                padding: 1vh;
+            }
+
+            .postulacion {
+                margin: 3vh;
+            }
+
+            .Postulantes {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            .postext {
+                word-wrap: break-word;
+                font-size: 3vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            .Ofertantes {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            .contratacion {
+                margin: 3vh
+            }
+
+            .cofertantes {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                border: 0.5vh solid #302b2b;
+                margin-left: 1vw;
+                margin-right: 1vw;
+                padding: 1vh;
+                margin-top: 4vh;
+            }
+
+            .ofetext {
+                word-wrap: break-word;
+                font-size: 3vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            .boton {
+                word-wrap: break-word;
+                margin-top: 1vh;
+                margin-left: 2vh;
+                font-size: 3vh;
+            }
         }
 
-        .titulo {
-            font-family: 'Indie Flower', cursive;
-            font-size: 15vh;
-            margin-top: 2vh;
-            margin-left: 5vh;
-            word-wrap: break-word;
-        }
+        /*EN ESTA PARTE USAMOS EL COMANDO @media PARA MANEJAR UN ESTILO ESPECIFICO EN DISPOSITIVOS MOVILES*/
+        @media screen and (min-device-width:1px) and (max-device-width:1280px) and (min-device-height:1px) and (max-device-height:1500px) {
+            .franja_superior {
+                margin: auto;
+                background: linear-gradient(259deg, rgba(0, 131, 242, 1) 0%, rgba(0, 212, 255, 1) 100%);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                justify-content: space-between;
 
-        .cslogan {
-            align-items: center;
-            padding-left: 20vw;
-            display: flex;
-            flex-wrap: wrap;
-            min-width: fit-content;
-        }
+            }
 
-        .slogan {
-            align-items: center;
-            background-color: #bda50700;
-            font-family: 'Indie Flower', cursive;
-            font-size: 4vh;
-            text-align: left;
-            padding-bottom: 1vh;
-            margin-left: 20vw;
-            word-wrap: break-word;
-        }
+            .titulo {
+                font-family: 'Indie Flower', cursive;
+                font-size: 15vh;
+                margin-top: 2vh;
+                margin-left: 3vw;
+                word-wrap: break-word;
+            }
 
-        .inferior {
-            display: flex;
-            flex-wrap: wrap;
-            min-width: fit-content;
-        }
+            .creditos {
+                font-size: 5vh;
+                word-wrap: break-word;
+                margin-top: -18vh;
+                display: flex;
+                justify-content: first baseline;
+                margin-left: 3vw;
+            }
 
-        .definicion {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            min-width: fit-content;
-        }
+            .cslogan {
+                align-items: center;
+                padding-left: 0vw;
+                display: flex;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
 
-        .mision {
-            width: fit-content;
-            padding: 1vh;
-            margin: 5vh;
-            text-align: justify;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: 3vh;
-            word-wrap: break-word;
+            .slogan {
+                align-items: center;
+                background-color: #bda50700;
+                font-family: 'Indie Flower', cursive;
+                font-size: 4vh;
+                padding-bottom: 1vh;
+                margin-left: 0vw;
+                word-wrap: break-word;
+                margin-right: 5vh;
+            }
 
-        }
+            .inferior {
+                display: flex;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
 
-        .cmision {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            min-width: fit-content;
-            align-items: center;
+            .definicion {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+            }
 
-        }
+            .mision {
+                width: fit-content;
+                padding: 1vh;
+                margin: 5vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size: 3vh;
+                word-wrap: break-word;
 
-        .creditos {
-            word-wrap: break-word;
-            margin-top: -12vh;
-            display: flex;
-            justify-content: first baseline;
-            margin-left: 5vw;
-        }
+            }
 
-        .usuarios {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            min-width: fit-content;
-            grid-template-columns: repeat(2, 1fr);
-            justify-content: center;
+            .cmision {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                align-items: center;
+            }
 
-        }
 
-        .cpostulantes {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            min-width: fit-content;
-            border: 0.5vh solid #302b2b;
-            margin-right: 1vw;
-            margin-left: 1vw;
-            padding: 1vh;
-        }
 
-        .postulacion {
-            margin: 3vh;
-        }
+            .usuarios {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
 
-        .Postulantes {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+            }
 
-        .postext {
-            word-wrap: break-word;
-            font-size: 3vh;
-            text-align: justify;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+            .cpostulantes {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                border: 0.5vh solid #302b2b;
+                margin-right: 1vw;
+                margin-left: 1vw;
+                padding: 1vh;
+            }
 
-        .Ofertantes {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+            .postulacion {
+                margin: 3vh;
+            }
 
-        .contratacion {
-            margin: 3vh
-        }
+            .Postulantes {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
 
-        .cofertantes {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            min-width: fit-content;
-            border: 0.5vh solid #302b2b;
-            margin-left: 1vw;
-            margin-right: 1vw;
-            padding: 1vh;
-            margin-top: 4vh;
-        }
+            .postext {
+                word-wrap: break-word;
+                font-size: 3vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
 
-        .ofetext {
-            word-wrap: break-word;
-            font-size: 3vh;
-            text-align: justify;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
+            .Ofertantes {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
 
-        .boton {
-            word-wrap: break-word;
-            margin-top: 1vh;
-            margin-left: 2vh;
-            font-size: 3vh;
+            .contratacion {
+                margin: 3vh
+            }
+
+            .cofertantes {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                min-width: fit-content;
+                border: 0.5vh solid #302b2b;
+                margin-left: 1vw;
+                margin-right: 1vw;
+                padding: 1vh;
+                margin-top: 4vh;
+            }
+
+            .ofetext {
+                word-wrap: break-word;
+                font-size: 3vh;
+                text-align: justify;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+
+            .boton {
+                word-wrap: break-word;
+                margin-top: 1vh;
+                margin-left: 2vh;
+                font-size: 3vh;
+            }
         }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1" />
 </head>
 
 <body>
@@ -218,10 +378,11 @@
                             o tu empresa
                         </h1>
                     </div>
+                    <form action="/contratar" method="get">
+                        <button type="submit" class="boton contratar">Contratar</button>
+                    </form>
                 </div>
-                <form action="/contratar" method="get">
-                    <button type="submit" class="boton contratar">Contratar</button>
-                </form>
+                
             </div>
         </div>
     </div>
