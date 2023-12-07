@@ -5,6 +5,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
      crossorigin="anonymous"></script>
     <style>
+         /*EN ESTA PARTE USAMOS EL COMANDO @media PARA MANEJAR UN ESTILO ESPECIFICO EN ORDENADORES*/
         @media screen and (min-device-width:1024px) and (max-device-width:1960px) and (min-device-height:569px) and (max-device-height:1080px) {
         @font-face {
             font-family: 'Monday Rain';
@@ -26,6 +27,18 @@
             margin-top: -0.77vh;
             margin-left: -0.37vw;
             margin-right: -0.37vw;
+            border: solid black;
+        }
+        .titulo {
+            font-size: 10vh;
+            border: solid #000000;
+        }
+
+        .regresar {
+            display: grid;
+            font-size: 8vh;
+            background: none;
+            border: solid black;
         }
 
         .FranjaInferior {
@@ -43,16 +56,7 @@
             padding-top: -10vh;
         }
 
-        .titulo {
-            font-size: 10vh;
-        }
-
-        .regresar {
-            display: grid;
-            font-size: 8vh;
-            background: none;
-            border: none;
-        }
+       
 
         .Datos {
             border: 0.7vh ridge black;
@@ -114,6 +118,7 @@
         .BotonPostularse {
             margin-left: 2vw;
         }}
+         /*EN ESTA PARTE USAMOS EL COMANDO @media PARA MANEJAR UN ESTILO ESPECIFICO EN DISPOSITIVOS MOVILES*/
         @media screen and (min-device-width:1px) and (max-device-width:1280px) and (min-device-height:1px) and (max-device-height:1500px) {
             @font-face {
             font-family: 'Monday Rain';
@@ -134,12 +139,27 @@
             flex-wrap: wrap;
             min-width: fit-content;
             align-content: center;
+            border: solid black;
         } 
+        .titulo{
+            font-family: 'Indie Flower', cursive;
+            font-size: 5vh;
+            border: solid black;
+        }
+        .regresar {
+            display: grid;
+            font-size: 8vh;
+            background: none;
+            border: solid black;
+        }
         li {
             display: inline-block;
             margin-top: 3vh;
             margin-bottom: -7vh;
         }
+        
+       
+
         .FranjaInferior{
             align-items: center;
         }
@@ -152,6 +172,10 @@
         
         }
     </style>
+    <!--IMPORTANTE!!!!!! nico no te lo cargues-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1" />
 </head>
 
 <body>
@@ -161,7 +185,7 @@
             <ul>
                 <li class="li2">
                     <form action="/" method="get">
-                        <button type="submit" id="bregresar" class="regresar"> <img src="https://urban-xylophone-rvv5q5v9vp9c5q57-3000.preview.app.github.dev/flechaimg"> </button>
+                        <button type="submit" id="bregresar" class="regresar"> <img src="/Imagenes/flechita.webp"> </button>
                     </form>
                 </li>
 
@@ -191,7 +215,7 @@
                     </div>
                     <div class="Edad">
                         <h1>Fecha de nacimiento</h1>
-                        <input type="date" id="start" name="fecha-nacimiento" value="2005-01-01" min="1973-01-01" max="2005-12-31" />
+                        <input type="date" id="start" name="fecha-nacimiento" value="2005-01-01" min="1973-01-01" max="2005-12-31", required>
                     </div>
                     <div class="Carrera">
                         <h1>Carrera</h1>
