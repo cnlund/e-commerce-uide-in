@@ -2,12 +2,9 @@ package main
 
 import (
 	"context"
-	"html/template"
-	"log"
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/rewrite"
 	"google.golang.org/api/option"
 )
 
@@ -34,19 +31,19 @@ type Skills struct {
 
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
-	template, _ := template.ParseFiles("index.html")
-	return template.Execute(c, nil)
+	template, _ := template.ParseFiles("public/index.html")
+	return template.Execute(c,nil)
 }
 
 // Handler para enviar hacia postular.html
 func handlerpostular(c *fiber.Ctx) error {
-	template, _ := template.ParseFiles("postulacion.html")
+	template, _ := template.ParseFiles("public/postular/postulacion.html")
 	return template.Execute(c, nil)
 }
 
-// Handler para ir a contratar
+//Handler para ir a contratar
 func handlercontratar(c *fiber.Ctx) error {
-	template, _ := template.ParseFiles("contratar.html")
+	template, _ := template.ParseFiles("public/contratar.html")
 	return template.Execute(c, nil)
 }
 
@@ -54,14 +51,8 @@ func handlercontratar(c *fiber.Ctx) error {
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
 	app := fiber.New()
-	app.Use(rewrite.New(rewrite.Config{
-		Rules: map[string]string{
-			"/postulacion.html": "/postular",
-		},
-	}))
-	app.Get("/", handlerindex)
-	app.Get("/postular", handlerpostular)
-	app.Get("/contratar", handlercontratar)
+	app.Post("/", handlerindex)
+	app.Post("/postular", handlerpostular)
 	//conexion con la api
 	ctx := context.Background()
 	sa := option.WithCredentialsFile("servicekey.json")
