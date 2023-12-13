@@ -2,6 +2,8 @@ package main
 
 import (
 	"context"
+	"log"
+	"text/template"
 
 	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
@@ -32,7 +34,7 @@ type Skills struct {
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
 	template, _ := template.ParseFiles("public/index.html")
-	return template.Execute(c,nil)
+	return template.Execute(c, nil)
 }
 
 // Handler para enviar hacia postular.html
@@ -41,7 +43,7 @@ func handlerpostular(c *fiber.Ctx) error {
 	return template.Execute(c, nil)
 }
 
-//Handler para ir a contratar
+// Handler para ir a contratar
 func handlercontratar(c *fiber.Ctx) error {
 	template, _ := template.ParseFiles("public/contratar.html")
 	return template.Execute(c, nil)
