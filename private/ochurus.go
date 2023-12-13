@@ -33,14 +33,22 @@ type Skills struct {
 
 // Handler para enviar el index.html
 func handlerindex(c *fiber.Ctx) error {
-	template, _ := template.ParseFiles("public/index.html")
-	return template.Execute(c, nil)
+	mensaje := "funciona"
+	template, err := template.ParseFiles("public/index.html")
+	if err != nil {
+		return err
+	}
+	return template.Execute(c, mensaje)
 }
 
 // Handler para enviar hacia postular.html
 func handlerpostular(c *fiber.Ctx) error {
-	template, _ := template.ParseFiles("public/postular/postulacion.html")
-	return template.Execute(c, nil)
+	mensaje := "el backend te ha movido a postular"
+	template, err := template.ParseFiles("public/postular.html")
+	if err != nil {
+		return err
+	}
+	return template.Execute(c, mensaje)
 }
 
 // Handler para ir a contratar
