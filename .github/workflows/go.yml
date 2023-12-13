@@ -22,7 +22,7 @@ jobs:
         go-version: '1.21.4'
 
     - name: Build
-      run: go build -v ./private/ochurus.go
+      run: go build -v ./...
 
     - name: Test
-      run: go test -v ./private/ochurus.go
+      run: go test -v ./private/...
