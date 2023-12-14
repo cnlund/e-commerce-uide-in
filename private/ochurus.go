@@ -1,11 +1,6 @@
 package main
 
 import (
-	"context"
-	"log"
-
-	"cloud.google.com/go/firestore"
-	firebase "firebase.google.com/go"
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -50,33 +45,14 @@ func contratarHandler(c *fiber.Ctx) error {
 	return c.SendFile("public/contratar.html")
 }
 
-// Creamos una lista de las ciudades
-func lciudades(ctx context.Context, client *firestore.Client) error {
-	return client.Collection("cities").Documents(ctx)
-}
-
 // -----------------------------------------------------------------------------------------
 func main() {
-	// Zona de la BDD ----------------------------------------------------------------------
-	ctx := context.Background()
-	conf := &firebase.Config{ProjectID: "ochurus-a8fb4"}
-	app, err := firebase.NewApp(ctx, conf)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	client, err := app.Firestore(ctx)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	defer client.Close()
 	// Zona HTML----------------------------------------------------------------------------
 	web := fiber.New()
 	web.Get("/", indexHandler)
 	web.Get("/comprobacion", comprohandler)
 	web.Post("/postular", postularHandler)
 	web.Post("/contratar", contratarHandler)
-	web.Static("/ciudades")
 	//creamos la conexion del puerto
 	web.Listen(":403")
 }
