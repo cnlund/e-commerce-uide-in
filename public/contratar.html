@@ -214,6 +214,13 @@
         </div>
     </div>
     </div>
+    <script>
+        fetch("/comprobacion")
+        .then(response => response.text())
+        .then(data => {
+            console.log(data)
+        })
+    </script>
 </body>
 
 </html>

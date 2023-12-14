@@ -386,9 +386,12 @@
             </div>
         </div>
     </div>
-    <!--codigo de los anuncios publicitarios del google-->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5767291243908725"
-        crossorigin="anonymous"></script>
+    <script>
+        fetch("/comprobacion")
+        .then(response => response.text())
+        .then(data => {
+            console.log(data)
+        })
+    </script>
 </body>
-
 </html>
