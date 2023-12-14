@@ -1,7 +1,8 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2",
+	"github.com/pocketbase/pocketbase"
 )
 
 // Zona de los Structs-------------------------------------------------------------------
@@ -45,9 +46,17 @@ func contratarHandler(c *fiber.Ctx) error {
 	return c.SendFile("public/contratar.html")
 }
 
+// Handler con la lista de las ciudades
+func ciudadesHandler(c *fiber.Ctx) error {
+	app := pocketbase.New()
+	res, _ := app.Dao().DB().NewQuery("select * from ciudades").Execute()
+	return res
+}
+
 // -----------------------------------------------------------------------------------------
 func main() {
 	// Zona HTML----------------------------------------------------------------------------
+	// Aqui tambien le asignamos con el nombre que queremos que aparezca en la pagina
 	web := fiber.New()
 	web.Get("/", indexHandler)
 	web.Get("/comprobacion", comprohandler)
